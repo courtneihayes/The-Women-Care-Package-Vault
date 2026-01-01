@@ -22,7 +22,7 @@ h1, h2, h3 { color: #fbbf24; }
 """, unsafe_allow_html=True)
 
 # Configure Google AI
-api_key = st.secrets.get("GOOGLE_API_KEY")
+api_key = st.secrets.get("gen-lang-client-0793096543")
 if api_key:
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel('gemini-pro')
