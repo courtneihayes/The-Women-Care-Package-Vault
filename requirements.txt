@@ -3,3 +3,4 @@ google-cloud-aiplatform
 gspread
 oauth2client
 python-dotenv
+google-generativeai
