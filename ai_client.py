@@ -1,4 +1,9 @@
 import os
+
+# Point Python to your local credential
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "service_account.json" 
+
+import os
 import json
 import streamlit as st
 
