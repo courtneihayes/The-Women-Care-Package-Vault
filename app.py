@@ -22,7 +22,7 @@ h1, h2, h3 { color: #fbbf24; }
 """, unsafe_allow_html=True)
 
 # Configure Google AI
-api_key = st.secrets.get("AIzaSyABm-6WByGiA00ZaiDfddELOfO-vavbua8")
+api_key = st.secrets.get("GOOGLE_API_KEY")
 if api_key:
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel('gemini-pro')
@@ -263,4 +263,3 @@ st.markdown("""
 All resources are confidential and free. You are not alone.
 </p>
 """, unsafe_allow_html=True)
-
