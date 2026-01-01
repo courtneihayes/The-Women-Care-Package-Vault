@@ -1,18 +1,17 @@
 import os
 import json
 import streamlit as st
-from google.cloud import aiplatform
 
-def setup_google_credentials():
-    # Load JSON from Streamlit secrets
-    service_info = json.loads(st.secrets["GCP_SERVICE_ACCOUNT_JSON"])
-    
-    # Write it to a local file
-    with open("service_account.json", "w") as f:
-        json.dump(service_info, f)
-    
-    # Tell Python to use it
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "service_account.json"
+# Read secret JSON
+service_info = json.loads(st.secrets["GCP_SERVICE_ACCOUNT_JSON"])
+
+# Write to a local file for Google AI authentication
+with open("service_account.json", "w") as f:
+    json.dump(service_info, f)
+
+# Tell Python where to find it
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "service_account.json"
+"
 
 def generate_ai_response(prompt: str):
     setup_google_credentials()
